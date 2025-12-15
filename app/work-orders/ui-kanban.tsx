@@ -197,7 +197,13 @@ export default function Kanban() {
                   {st.label}
                 </div>
                 <div className="space-y-3">
-                  {byStatus(st.key).map((st: StatusRow) => (
+                  {(statuses.length ? statuses : ([{
+  key: "Nuevo",
+  label: "Nuevo",
+  sort_order: 0,
+  color: "#94a3b8",
+  is_terminal: false,
+}] as StatusRow[])).map((st: StatusRow) => (
                     <Card key={wo.id} className="p-3">
                     <div className="flex items-start justify-between gap-3">
                       <Link href={`/work-orders/${wo.id}`} className="min-w-0 flex-1">
