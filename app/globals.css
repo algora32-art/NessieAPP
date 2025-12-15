@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: 255 255 255;
+  --fg: 17 24 39;
+  --muted: 107 114 128;
+  --card: 249 250 251;
+  --border: 229 231 235;
+  --brand: 16 185 129;
+}
+.dark{
+  --bg: 17 24 39;
+  --fg: 243 244 246;
+  --muted: 156 163 175;
+  --card: 31 41 55;
+  --border: 55 65 81;
+  --brand: 52 211 153;
+}
+body{ background-color: rgb(var(--bg)); color: rgb(var(--fg)); }
+*{ border-color: rgb(var(--border)); }
