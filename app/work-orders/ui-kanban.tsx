@@ -4,8 +4,13 @@ import { supabaseBrowser } from "@/lib/supabase/browser";
 import { Button, Card, Input, Label, Select } from "@/components/ui";
 import Link from "next/link";
 
-type Status = string;
-type StatusRow = { key: string; label: string; sort_order: number; color: string; is_terminal: boolean };
+type Status = {
+  key: string
+  label: string
+  sort_order: number
+  color: string
+  is_terminal: boolean
+}
 
 type WorkOrder = {
   id: string;
@@ -184,7 +189,7 @@ export default function Kanban() {
                   {st.label}
                 </div>
                 <div className="space-y-3">
-                  {byStatus(st.key).map((wo) => (
+                  {byStatus(st.key).map((st: Status) => (
                     <Card key={wo.id} className="p-3">
                     <div className="flex items-start justify-between gap-3">
                       <Link href={`/work-orders/${wo.id}`} className="min-w-0 flex-1">
