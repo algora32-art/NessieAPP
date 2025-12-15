@@ -190,8 +190,8 @@ export default function Kanban() {
           </div>
 
           <div className="grid grid-cols-1 gap-4 xl:grid-cols-6">
-            {(statuses.length ? statuses : [{ key: "Nuevo", label: "Nuevo", sort_order: 0, color: "#94a3b8", is_terminal: false }] as any).map((st) => (
-              <div key={st.key} className="min-w-0">
+            {(statuses.length ? statuses : [{ key: "Nuevo", label: "Nuevo", sort_order: 0, color: "#94a3b8", is_terminal: false }] as StatusRow[]).map((st: StatusRow) => (
+
                 <div className="mb-2 text-sm font-semibold flex items-center gap-2">
                   <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: st.color }} />
                   {st.label}
